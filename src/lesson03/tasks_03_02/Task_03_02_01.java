@@ -1,4 +1,5 @@
-package lesson03;
+package lesson03.tasks_03_02;
+
 /*
 Задача №1
 Необходимо вывести числа от 0 до 15.

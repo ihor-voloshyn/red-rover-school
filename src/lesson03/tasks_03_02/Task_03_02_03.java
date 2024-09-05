@@ -1,4 +1,4 @@
-package lesson03;
+package lesson03.tasks_03_02;
 
 /*
 Задача №3

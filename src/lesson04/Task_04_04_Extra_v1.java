@@ -9,7 +9,7 @@ import java.util.Arrays;
 получилось { 10, 9, …, 2, 1 } ). Не НАПЕЧАТАТЬ в обратном порядке, а переставить
 элементы массива.
  */
-public class Task_04_04_Extra {
+public class Task_04_04_Extra_v1 {
     public static void main(String[] args) {
         int[] array1 = {9, 2, 6, 4, 5, 12, 7, 8, 6, 1};
         int sizeArray = array1.length;
