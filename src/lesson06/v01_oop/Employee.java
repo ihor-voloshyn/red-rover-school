@@ -1,4 +1,4 @@
-package lesson06.v01;
+package lesson06.v01_oop;
 
 abstract class Employee {
     private double baseSalary;

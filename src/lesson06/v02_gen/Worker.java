@@ -1,4 +1,4 @@
-package lesson06.v02;
+package lesson06.v02_gen;
 
 public class Worker {
     private Employee employee;

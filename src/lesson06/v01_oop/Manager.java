@@ -1,12 +1,7 @@
-package lesson06.v02;
+package lesson06.v01_oop;
 
-class Director {
-    private Employee employee;
+public class Manager extends Worker {
     private int numberOfSubordinates;
-
-    public Director(Employee employee) {
-        this.employee = employee;
-    }
 
     public int getNumberOfSubordinates() {
         return numberOfSubordinates;
@@ -16,11 +11,11 @@ class Director {
         this.numberOfSubordinates = numberOfSubordinates;
     }
 
+    @Override
     public double getSalary() {
         if (numberOfSubordinates == 0) {
-            return employee.getBaseSalary();
+            return getBaseSalary();
         }
-        return employee.getBaseSalary() * (1 + numberOfSubordinates / 100.0 * 9);
+        return getBaseSalary() * (1 + (numberOfSubordinates / 100.0) * 3);
     }
 }
-

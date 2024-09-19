@@ -1,10 +1,10 @@
-package lesson06.v02;
+package lesson06.v02_gen;
 
-class Manager {
+class Director {
     private Employee employee;
     private int numberOfSubordinates;
 
-    public Manager(Employee employee) {
+    public Director(Employee employee) {
         this.employee = employee;
     }
 
@@ -20,6 +20,7 @@ class Manager {
         if (numberOfSubordinates == 0) {
             return employee.getBaseSalary();
         }
-        return employee.getBaseSalary() * (1 + numberOfSubordinates / 100.0 * 3);
+        return employee.getBaseSalary() * (1 + numberOfSubordinates / 100.0 * 9);
     }
 }
+

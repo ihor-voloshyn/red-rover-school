@@ -1,4 +1,4 @@
-package lesson06.v02;
+package lesson06.v01_oop;
 
 class EmployeeUtils {
 
@@ -83,9 +83,9 @@ class EmployeeUtils {
     public static Manager findWithMaxBonus(Manager[] managers) {
         if (managers.length == 0) return null;
         Manager maxBonusManager = managers[0];
-        double maxBonus = managers[0].getSalary() - Employee.getBaseSalary();
+        double maxBonus = managers[0].getSalary() - managers[0].getBaseSalary();
         for (int i = 1; i < managers.length; i++) {
-            double currentBonus = managers[i].getSalary() - Employee.getBaseSalary();
+            double currentBonus = managers[i].getSalary() - managers[i].getBaseSalary();
             if (currentBonus > maxBonus) {
                 maxBonus = currentBonus;
                 maxBonusManager = managers[i];
@@ -98,9 +98,9 @@ class EmployeeUtils {
     public static Manager findWithMinBonus(Manager[] managers) {
         if (managers.length == 0) return null;
         Manager minBonusManager = managers[0];
-        double minBonus = managers[0].getSalary() - Employee.getBaseSalary();
+        double minBonus = managers[0].getSalary() - managers[0].getBaseSalary();
         for (int i = 1; i < managers.length; i++) {
-            double currentBonus = managers[i].getSalary() - Employee.getBaseSalary();
+            double currentBonus = managers[i].getSalary() - managers[i].getBaseSalary();
             if (currentBonus < minBonus) {
                 minBonus = currentBonus;
                 minBonusManager = managers[i];
