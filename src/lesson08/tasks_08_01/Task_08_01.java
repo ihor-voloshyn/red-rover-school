@@ -6,13 +6,12 @@ public class Task_08_01 {
         String numberString = Integer.toString(number);
 
         if (numberString.isEmpty()) {
-            return "";
+            return null;
         }
 
-        String result = numbers[numberString.charAt(0) - '0'];
+        String result = numbers[Character.getNumericValue(numberString.charAt(0))];
         for (int i = 1; i < numberString.length(); i++) {
-            result += " " + numbers[numberString.charAt(i) - '0'];
-
+            result += " " + numbers[Character.getNumericValue(numberString.charAt(i))];
         }
 
         return result;

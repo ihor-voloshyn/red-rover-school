@@ -1,6 +1,4 @@
-package lesson08.tasks_08_03;
-
-import java.util.Arrays;
+package lesson08.tasks_08_04;
 
 /*
 Класс должен иметь следующие возможности (реализованные как методы):
@@ -10,14 +8,15 @@ import java.util.Arrays;
 ● Посчитать средний балл любого студента.
  */
 public class ClassJournal {
-    public String[] studentsNames;
-    public int[][] grades;
-    public int numberOfClasses;
+    private static StudentGrades[] studentGrades;
+    private static int sessionsNumber;
 
-    ClassJournal(String[] studentsNames, int numberOfClasses) {
-        this.studentsNames = studentsNames;
-        this.grades = new int[studentsNames.length][numberOfClasses];
-        this.numberOfClasses = numberOfClasses;
+    public static void setStudentGrades(StudentGrades[] studentGrades) {
+        ClassJournal.studentGrades = studentGrades;
+    }
+
+    public static void setSessionsNumber(int sessionsNumber) {
+        ClassJournal.sessionsNumber = sessionsNumber;
     }
 
     public static String formatName(String name, String separator, int length) {
@@ -29,32 +28,30 @@ public class ClassJournal {
     }
 
     public int findStudentIndex(String studentName) {
-        if (studentName.isEmpty()) {
+        if (studentName.isEmpty() || studentGrades.length == 0) {
+            System.out.println("Error: name or array is empty.");
             return -1;
         }
-        for (int i = 0; i < studentsNames.length; i++) {
-            if (studentName.equals(studentsNames[i])) {
+        for (int i = 0; i < studentGrades.length; i++) {
+            if (studentGrades[i].getStudentName().equals(studentName)) {
                 return i;
             }
         }
         return -1;
     }
 
-    public void setGrade(String studentName, int classNumber, int grade) {
-        int studentIndex = findStudentIndex(studentName);
-        grades[studentIndex][classNumber - 1] = grade;
+    public void setGrade(String studentName, int sessionNumber, int grade) {
+        studentGrades[findStudentIndex(studentName)].setGradeSession(sessionNumber, grade);
     }
 
-    public int getGradeForClass(String studentName, int classNumber) {
-        int studentIndex = findStudentIndex(studentName);
-        return grades[studentIndex][classNumber - 1];
+    public int getGradeForSession(String studentName, int sessionNumber) {
+        return studentGrades[findStudentIndex(studentName)].getGradeForSession(sessionNumber);
     }
 
-    public int[] getGradeAll(String studentName) {
-        int studentIndex = findStudentIndex(studentName);
-        return grades[studentIndex];
+    public Integer[] getGradeAll(String studentName) {
+        return studentGrades[findStudentIndex(studentName)].getGrades();
     }
-
+/*
     public void printGradesForClass(int classNumber) {
         System.out.println("Оценки за занятие " + formatName(String.valueOf(classNumber), " ", 2) + ":");
         for (String studentName : studentsNames) {
@@ -78,6 +75,5 @@ public class ClassJournal {
             result += grade;
         }
         System.out.println("Средняя оценка за курс студента " + formatName(studentName, ".", 20) + 1.0 * result / numberOfClasses);
-    }
-
+    }*/
 }

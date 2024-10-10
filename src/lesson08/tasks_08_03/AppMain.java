@@ -1,7 +1,5 @@
 package lesson08.tasks_08_03;
 
-import java.util.Arrays;
-
 /*
 Задача №3
 (на подумать, сложная)
@@ -15,7 +13,7 @@ import java.util.Arrays;
 ● Распечатать все оценки всех студентов за весь курс
 ● Посчитать средний балл любого студента.
  */
-public class ATaskRunner {
+public class AppMain {
     public static void main(String[] args) {
 
         String[] students = {"Иванов", "Петров", "Сидоров"};
@@ -32,12 +30,16 @@ public class ATaskRunner {
         journal.setGrade("Петров", 3, 5);
         journal.setGrade("Сидоров", 3, 5);
 
-        journal.printGradesForClass(3);
+        journal.setGrade("Иванов", 4, 4);
+        journal.setGrade("Сидоров", 4, 5);
+
+        journal.setGrade("Петров", 5, 5);
+        journal.setGrade("Сидоров", 5, 5);
+
+        journal.printGradesForClass(10);
         journal.printAllGrades();
         journal.getAverageGrade("Иванов");
         journal.getAverageGrade("Петров");
         journal.getAverageGrade("Сидоров");
-
-
     }
 }

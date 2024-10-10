@@ -4,8 +4,17 @@ class Manager {
     private Employee employee;
     private int numberOfSubordinates;
 
+    public Manager() {}
+
     public Manager(Employee employee) {
         this.employee = employee;
+    }
+
+    static Manager makeManager(Employee employee, int numberOfSubordinates) {
+        Manager manager = new Manager();
+        manager.employee = employee;
+        manager.numberOfSubordinates = numberOfSubordinates;
+        return manager;
     }
 
     public int getNumberOfSubordinates() {

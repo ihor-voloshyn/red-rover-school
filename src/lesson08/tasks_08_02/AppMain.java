@@ -16,7 +16,7 @@ import static lesson08.tasks_08_02.TaxCalculator.calculateTaxes;
 ● За каждого ребенка из зарплаты вычитается 1000, и налог берется с оставшейся
 суммы.
  */
-public class ATaskRunner {
+public class AppMain {
     public static void main(String[] args) {
         Employee jane = new Employee("Jane", 11000, 2);
         Employee johne = new Employee("Johne", 5000, 1);

@@ -6,8 +6,8 @@ package lesson08.tasks_08_01;
 (например, 643) в строку, состоящую из названий цифр этого числа (например, “шесть
 четыре три”).
  */
-public class ATaskRunner {
+public class AppMain {
     public static void main(String[] args) {
-        System.out.println(Task_08_01.numberToString(6437890));
+        System.out.println(Task_08_01.numberToString(6537890));
     }
 }

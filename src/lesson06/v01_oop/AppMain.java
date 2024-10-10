@@ -1,6 +1,6 @@
 package lesson06.v01_oop;
 
-public class Main {
+public class AppMain {
     public static void main(String[] args) {
         Worker worker1 = new Worker();
         worker1.setBaseSalary(1500);
